@@ -43,14 +43,27 @@
     background: var(--dark);
   }
 
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 60%;
+    opacity: 0.3;
+    filter: brightness(0.7);
+  }
+
   .hero::before {
     content: '';
     position: absolute;
     inset: 0;
     background:
+      linear-gradient(to top, var(--dark) 0%, transparent 50%),
       radial-gradient(ellipse at 30% 60%, rgba(74,139,127,0.12) 0%, transparent 60%),
       radial-gradient(ellipse at 70% 40%, rgba(139,115,85,0.08) 0%, transparent 50%);
     pointer-events: none;
+    z-index: 1;
   }
 
   .hero-content {
@@ -457,38 +470,24 @@
     .hero-scroll { display: none; }
   }
 
-  /* ── PLACEHOLDER IMAGES ── */
-  .img-placeholder {
+  /* ── COLLECTION IMAGE ── */
+  .collection-banner {
+    padding: 0 clamp(24px, 5vw, 80px);
+    margin-bottom: clamp(40px, 6vh, 80px);
+  }
+
+  .collection-banner img {
     width: 100%;
-    aspect-ratio: 1;
     border-radius: 2px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 14px;
-    color: var(--warm-grey);
+    filter: brightness(0.97);
   }
-
-  .img-placeholder.full {
-    grid-column: 1 / -1;
-    aspect-ratio: 16/10;
-  }
-
-  .bronze-bg-1 { background: linear-gradient(135deg, #3d6b61 0%, #5a8a7a 40%, #7b9e6e 70%, #4a6b5f 100%); }
-  .bronze-bg-2 { background: linear-gradient(135deg, #4a8b7f 0%, #3a7568 40%, #6a9b8f 70%, #2d5e54 100%); }
-  .bronze-bg-3 { background: linear-gradient(135deg, #5a7b6f 0%, #4a9b85 40%, #3a6b5f 70%, #6aab95 100%); }
-  .bronze-bg-4 { background: linear-gradient(135deg, #3a8b75 0%, #5a9b8f 40%, #4a7b6f 70%, #2a6b5f 100%); }
-  .bronze-bg-5 { background: linear-gradient(135deg, #4a7b75 0%, #3a9b85 40%, #5a8b7f 70%, #6a9b85 100%); }
-  .bronze-bg-6 { background: linear-gradient(135deg, #5a8b7f 0%, #3a7b65 40%, #4a9b85 70%, #3a6b5f 100%); }
-  .bronze-bg-7 { background: linear-gradient(135deg, #3a6b65 0%, #4a8b85 40%, #5a9b8f 70%, #3a7b6f 100%); }
-  .bronze-bg-8 { background: linear-gradient(145deg, #3a5b55 0%, #4a7b75 30%, #5a8b7f 60%, #3a6b5f 100%); }
 </style>
 </head>
 <body>
 
 <!-- HERO -->
 <section class="hero">
+  <img src="images/IMG_9392.jpeg" alt="Collection of eight bronze bowls with verdigris patina" class="hero-bg">
   <div class="hero-content">
     <div class="hero-label">Veronica RH Kotzé — 2025 Collection</div>
     <h1>Bronze Bowls<br><em>Edition of One</em></h1>
@@ -514,13 +513,18 @@
   <div class="sig">Stellenbosch, South Africa — 2025</div>
 </section>
 
+<!-- COLLECTION -->
+<div class="collection-banner">
+  <img src="images/IMG_9392.jpeg" alt="The complete collection — eight bronze bowls with verdigris patina">
+</div>
+
 <!-- CATALOGUE -->
 <section class="catalogue">
 
   <article class="piece" data-piece>
     <div class="piece-images">
-      <div class="img-placeholder bronze-bg-1">Side view</div>
-      <div class="img-placeholder bronze-bg-2">Detail</div>
+      <img src="images/IMG_9393.jpeg" alt="Bowl I — Side view" class="piece-img">
+      <img src="images/IMG_9394.jpeg" alt="Bowl I — Detail" class="piece-img">
     </div>
     <div class="piece-info">
       <div class="piece-number">I</div>
@@ -535,8 +539,8 @@
 
   <article class="piece" data-piece>
     <div class="piece-images">
-      <div class="img-placeholder bronze-bg-2">Side view</div>
-      <div class="img-placeholder bronze-bg-3">Detail</div>
+      <img src="images/IMG_9396.jpeg" alt="Bowl II — Side view" class="piece-img">
+      <img src="images/IMG_9395.jpeg" alt="Bowl II — Detail" class="piece-img">
     </div>
     <div class="piece-info">
       <div class="piece-number">II</div>
@@ -551,8 +555,8 @@
 
   <article class="piece" data-piece>
     <div class="piece-images">
-      <div class="img-placeholder bronze-bg-3">Side view</div>
-      <div class="img-placeholder bronze-bg-4">Detail</div>
+      <img src="images/IMG_9398.jpeg" alt="Bowl III — Side view" class="piece-img">
+      <img src="images/IMG_9397.jpeg" alt="Bowl III — Detail" class="piece-img">
     </div>
     <div class="piece-info">
       <div class="piece-number">III</div>
@@ -567,8 +571,8 @@
 
   <article class="piece" data-piece>
     <div class="piece-images">
-      <div class="img-placeholder bronze-bg-4">Side view</div>
-      <div class="img-placeholder bronze-bg-5">Detail</div>
+      <img src="images/IMG_9400.jpeg" alt="Bowl IV — Side view" class="piece-img">
+      <img src="images/IMG_9399.jpeg" alt="Bowl IV — Detail" class="piece-img">
     </div>
     <div class="piece-info">
       <div class="piece-number">IV</div>
@@ -583,8 +587,8 @@
 
   <article class="piece" data-piece>
     <div class="piece-images">
-      <div class="img-placeholder bronze-bg-5">Side view</div>
-      <div class="img-placeholder bronze-bg-6">Detail</div>
+      <img src="images/IMG_9402.jpeg" alt="Bowl V — Side view" class="piece-img">
+      <img src="images/IMG_9401.jpeg" alt="Bowl V — Detail" class="piece-img">
     </div>
     <div class="piece-info">
       <div class="piece-number">V</div>
@@ -599,8 +603,8 @@
 
   <article class="piece" data-piece>
     <div class="piece-images">
-      <div class="img-placeholder bronze-bg-6">Side view</div>
-      <div class="img-placeholder bronze-bg-7">Detail</div>
+      <img src="images/IMG_9404.jpeg" alt="Bowl VI — Side view" class="piece-img">
+      <img src="images/IMG_9403.jpeg" alt="Bowl VI — Detail" class="piece-img">
     </div>
     <div class="piece-info">
       <div class="piece-number">VI</div>
@@ -615,8 +619,8 @@
 
   <article class="piece" data-piece>
     <div class="piece-images">
-      <div class="img-placeholder bronze-bg-7">Side view</div>
-      <div class="img-placeholder bronze-bg-8">Detail</div>
+      <img src="images/IMG_9408.jpeg" alt="Bowl VII — Side view" class="piece-img">
+      <img src="images/IMG_9405.jpeg" alt="Bowl VII — Detail" class="piece-img">
     </div>
     <div class="piece-info">
       <div class="piece-number">VII</div>
@@ -631,8 +635,8 @@
 
   <article class="piece" data-piece>
     <div class="piece-images">
-      <div class="img-placeholder bronze-bg-8">Side view</div>
-      <div class="img-placeholder bronze-bg-1">Detail</div>
+      <img src="images/IMG_9406.jpeg" alt="Bowl VIII — Side view" class="piece-img">
+      <img src="images/IMG_9407.jpeg" alt="Bowl VIII — Detail" class="piece-img">
     </div>
     <div class="piece-info">
       <div class="piece-number">VIII</div>
